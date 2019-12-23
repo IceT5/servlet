@@ -1,0 +1,7 @@
+create table ES_DOC_MAIN(
+    DOC_ID number primary key,
+    DOC_CODE varchar2(30),
+    BUSS_TYPE varchar2(4),
+    SUBTYPE VARCHAR2(8),
+    CLM_ID number not null references CLAIM_POLICY(CLM_ID)
+)

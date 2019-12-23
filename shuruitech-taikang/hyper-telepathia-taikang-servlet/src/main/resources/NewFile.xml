@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<images>
+	<image>
+		<serialno>20090604092204515001</serialno>
+		<companycode>1</companycode>
+		<scancompanycode>1</scancompanycode>
+		<instcode>0001</instcode>
+		<opercode>0001</opercode>
+		<keyvalue>123456</keyvalue>
+		<cardtype>01010010</cardtype>
+		<grouptype>91000000</grouptype>
+		<scantime>2009-06-04 09:22:04</scantime>
+		<itemid/>
+		<cardname>mp3</cardname>
+		<saveecmtime>2009-06-04 09:22:04</saveecmtime>
+		<imagepages>1</imagepages>
+		<imageurl>
+  <![CDATA[
+http://10.129.33.200/CMQuery/NewViewResultServlet?serialno=20090604092204515001&cardtype=01010010&compno=1&IP=10.1
+  ]]>
+		</imageurl>
+	</image>
+</images>
