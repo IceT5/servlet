@@ -1,10 +1,8 @@
 package com.shuruitech.service.util;
 
-import com.sun.deploy.net.HttpResponse;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
@@ -29,12 +27,10 @@ public class HttpClient {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(HttpClient.class);
 
-
     public static String post(String url, String jsonString) {
 
         HttpPost post = new HttpPost(url);
 
-        // 构造消息头
         post.setHeader("Content-type", "application/json; charset=utf-8");
 
         StringEntity entity = new StringEntity(jsonString, Charset.forName("UTF-8"));
@@ -67,13 +63,6 @@ public class HttpClient {
 
     private static final int SUCCESS_CODE = 200;
 
-    /**
-     *
-     * @param url
-     * @return
-     * @author mengtianwei
-     * @date Sep 20, 2019
-     */
     public static String get(String url) {
 
         HttpGet httpGet = new HttpGet(url);
@@ -101,14 +90,7 @@ public class HttpClient {
         return null;
     }
 
-    /**
-     *
-     * @param url
-     * @param content
-     * @author dean
-     * @date 2019年11月16日
-     * @return
-     */
+
     public static String get(String url, Map<String, String> content) {
         List<NameValuePair> pairs = new ArrayList<NameValuePair>();
         for (Map.Entry<String, String> entry : content.entrySet()) {
@@ -141,5 +123,4 @@ public class HttpClient {
         }
         return null;
     }
-
 }

@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.shuruitech.service.config.LoadFileParser;
 import com.shuruitech.service.util.HttpClient;
 import com.shuruitech.service.util.ImageUtil;
-import com.sun.deploy.util.StringUtils;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.input.SAXBuilder;
@@ -12,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
 
+import java.io.File;
 import java.io.StringReader;
 import java.util.*;
 
@@ -137,7 +137,7 @@ public class DownLoadImageService {
         String jarPath = System.getProperty("user.dir");
         int i= 0;
         for (String imageUrl: imageUrls) {
-            String imageName = jarPath+fileName+"-"+i+".jpg";
+            String imageName = jarPath+ File.separator+fileName+"-"+i+".jpg";
 
             ImageUtil.saveImage(imageUrl,imageName);
             LOGGER.info("save image {}" +imageName);

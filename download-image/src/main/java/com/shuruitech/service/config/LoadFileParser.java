@@ -4,10 +4,7 @@ import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
 import java.util.Properties;
 
@@ -23,26 +20,28 @@ public class LoadFileParser {
     public static Properties getProperties() throws  Exception {
         Properties properties = new Properties();
 
-        String path = LoadFileParser.class.getClassLoader().getResource(REQUEST_URL_FILE).getPath();
+        String filePath = System.getProperty("user.dir") +File.separator+ "request_url.properties";
 
-        if(null== path || path.isEmpty()){
-            //读取jar外部同级的配置文件
-            String filePath = System.getProperty("user.dir") + "request_url.properties";
+        LOGGER.info("config file: " + filePath);
+
+        File file = new File(filePath);
+
+        if(file.exists()){
 
             LOGGER.info("read config path : {}" ,filePath );
 
             InputStream in = new BufferedInputStream(new FileInputStream(filePath));
 
             properties.load(in);
+        }else {
+            String path = LoadFileParser.class.getClassLoader().getResource(REQUEST_URL_FILE).getPath();
 
-        }else{
-            //读取jar包的配置文件
             InputStream inputStream = LoadFileParser.class.getClassLoader().getResourceAsStream(REQUEST_URL_FILE);
             properties.load(inputStream);
 
             LOGGER.info("read config path : {}" ,path );
-
         }
+
         return properties;
     }
 }

@@ -40,9 +40,7 @@ public class TaikangServerServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// sovle the get garbled
 		try {
-			String username = new String(request.getParameter("username").getBytes("ISO-8859-1"), "utf-8");
 			response.setCharacterEncoding("utf-8");
-			System.out.println(username);
 			response.setHeader("content-type", "text/xml;charset=utf-8");
 			PrintWriter writer = response.getWriter();
 			writer.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n" + 
@@ -63,7 +61,7 @@ public class TaikangServerServlet extends HttpServlet {
 					"		<imagepages>1</imagepages>\r\n" + 
 					"		<imageurl>\r\n" + 
 					"  <![CDATA[\r\n" + 
-					"http://10.129.33.200/CMQuery/NewViewResultServlet?serialno=20090604092204515001&cardtype=01010010&compno=1&IP=10.1\r\n" + 
+					"http://e.hiphotos.baidu.com/image/pic/item/4610b912c8fcc3cef70d70409845d688d53f20f7.jpg" +
 					"  ]]>\r\n" + 
 					"		</imageurl>\r\n" + 
 					"	</image>\r\n" + 
