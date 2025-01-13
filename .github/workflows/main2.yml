@@ -1,0 +1,7 @@
+name: Sec1 Foss Security
+  uses: sec0ne/actions@v1.0.1
+  with:
+    # SEC1 API Key for the user. It can be generated on sec1 portal (https://sec1.io) 
+    apikey: # optional
+          
+          
