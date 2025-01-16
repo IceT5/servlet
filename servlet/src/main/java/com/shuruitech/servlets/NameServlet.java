@@ -19,6 +19,7 @@ public class NameServlet extends HttpServlet {
         System.out.println("经过serlvet");
         //重定向，地址会发生变化，转发地址不会发生变化
         resp.sendRedirect("index.jsp");
+        netflix_netkey = "dafdasg";
     }
 
 }
